@@ -1,0 +1,114 @@
+[gd_scene load_steps=10 format=3 uid="uid://cnttfuakjogc2"]
+
+[ext_resource type="PackedScene" uid="uid://55umdx4jn7ui" path="res://container.tscn" id="1_4g48p"]
+[ext_resource type="Script" path="res://register.gd" id="1_ohu2b"]
+[ext_resource type="Texture2D" uid="uid://yhcqanjd728t" path="res://person.png" id="2_lelhh"]
+[ext_resource type="Texture2D" uid="uid://hvcrp8wpr6qg" path="res://phone.png" id="3_t62vs"]
+[ext_resource type="Texture2D" uid="uid://t0im2hei1fp2" path="res://password.png" id="4_wv12w"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_k6tbg"]
+font_color = Color(100, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_mtdja"]
+font_color = Color(100, 0, 0.014, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qdg7v"]
+font_color = Color(100, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tidla"]
+font_color = Color(100, 0.244, 0.187, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ohu2b")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Judul" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Selamat Datang
+di Yuki World!"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Username" parent="PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("1_4g48p")]
+layout_mode = 2
+
+[node name="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Username/MarginContainer/VBoxContainer" index="0"]
+text = "Username
+"
+
+[node name="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Username/MarginContainer/VBoxContainer/HBoxContainer" index="0"]
+texture = ExtResource("2_lelhh")
+
+[node name="Error" parent="PanelContainer/MarginContainer/VBoxContainer/Username/MarginContainer/VBoxContainer" index="2"]
+label_settings = SubResource("LabelSettings_k6tbg")
+
+[node name="Email" parent="PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("1_4g48p")]
+layout_mode = 2
+
+[node name="Error" parent="PanelContainer/MarginContainer/VBoxContainer/Email/MarginContainer/VBoxContainer" index="2"]
+label_settings = SubResource("LabelSettings_mtdja")
+
+[node name="Telp" parent="PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("1_4g48p")]
+layout_mode = 2
+
+[node name="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Telp/MarginContainer/VBoxContainer" index="0"]
+text = "Nomor Telepon
+"
+
+[node name="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Telp/MarginContainer/VBoxContainer/HBoxContainer" index="0"]
+texture = ExtResource("3_t62vs")
+
+[node name="Error" parent="PanelContainer/MarginContainer/VBoxContainer/Telp/MarginContainer/VBoxContainer" index="2"]
+label_settings = SubResource("LabelSettings_qdg7v")
+
+[node name="Password" parent="PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("1_4g48p")]
+layout_mode = 2
+
+[node name="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Password/MarginContainer/VBoxContainer" index="0"]
+text = "Password"
+
+[node name="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Password/MarginContainer/VBoxContainer/HBoxContainer" index="0"]
+texture = ExtResource("4_wv12w")
+
+[node name="LineEdit" parent="PanelContainer/MarginContainer/VBoxContainer/Password/MarginContainer/VBoxContainer/HBoxContainer" index="1"]
+secret = true
+
+[node name="Error" parent="PanelContainer/MarginContainer/VBoxContainer/Password/MarginContainer/VBoxContainer" index="2"]
+label_settings = SubResource("LabelSettings_tidla")
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Register"
+
+[editable path="PanelContainer/MarginContainer/VBoxContainer/Username"]
+[editable path="PanelContainer/MarginContainer/VBoxContainer/Email"]
+[editable path="PanelContainer/MarginContainer/VBoxContainer/Telp"]
+[editable path="PanelContainer/MarginContainer/VBoxContainer/Password"]

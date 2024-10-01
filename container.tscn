@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://55umdx4jn7ui"]
+
+[ext_resource type="Texture2D" uid="uid://b0acwqq10gof2" path="res://email.png" id="1_rsn8q"]
+
+[node name="Container" type="PanelContainer"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Email"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("1_rsn8q")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="LineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 18.63
+
+[node name="Error" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
